@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      
+    </head>
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4  col-md-offset-4">
+    
+    <form method= "post" onsubmit="return validation()" action="/user">
+        <div class="form-group">
+          <label for="exampleInputEmail1">FirstName</label>
+          <input type="text"  class="form-control" id="fname" name = "firstname" placeholder="Enter firstname">
+          
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">LastName</label>
+            <input type="text"  class="form-control" id="lname" name = "lastname" placeholder="Enter lastname">
+            
+          </div>
+          
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="text" class="form-control"  name="password" id="exampleInputPassword1" placeholder="Password">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">RePassword</label>
+            <input type="text" class="form-control"  name="rePassword" id="exampleInputPassword2" placeholder="RePassword" onfocusout= "check_password()">
+          </div>
+          
+          <div class="form-group">
+            <label for="exampleInputEmail">Email</label>
+            <input type="text" class="form-control"  name="email" id="email" placeholder="Enter Email" >
+          </div>
+      
+          <div class="form-group">
+            <label for="exampleInputEmail1">Contact</label>
+            <input type="text"  class="form-control" id="contact" name = "contact" placeholder="Enter contact">
+            
+          </div>
+       
+        <button type="submit"  value="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+    </div>
+
+  </div>
+</div>
+  </body>      
+</html>
+
+<script>
+    
+function validation(){
+    let firstname = document.getElementById("fname").value;
+    let lastname = document.getElementById("lname").value;
+    let contact = document.getElementById("contact").value;
+
+    if(firstname == "" , lastname=="" , contact== ""){
+        alert('fill all information');
+        return false
+    }
+}
+
+
+
+function check_password(){
+  let pwd = document.getElementById("exampleInputPassword1").value;
+    let pwd2 = document.getElementById("exampleInputPassword2").value;
+  
+
+    if(pwd != pwd2){
+        alert ("password are not match");
+    }
+}
+
+
+</script>
